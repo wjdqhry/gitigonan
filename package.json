@@ -22,10 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.26.1",
-    "chalk": "^5.0.1",
-    "commander": "^9.1.0",
-    "inquirer": "^8.2.2",
-    "request": "^2.88.2"
+    "commander": "^9.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
