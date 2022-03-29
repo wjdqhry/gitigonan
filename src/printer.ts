@@ -1,7 +1,7 @@
 import fs from "fs";
 
-const igonanTxt = fs.readFileSync("./asset/igonan.txt", "utf8");
-const sorryTxt = fs.readFileSync("./asset/sorry.txt", "utf8");
+import { getSorryText } from "./asset/sorry";
+import { getIgonanText } from "./asset/igonan";
 
 export async function delayedPrint(
   arr: string[],
@@ -39,7 +39,7 @@ export const printIgonan = async () => {
   await sleep(1000);
   newLine();
 
-  await delayedPrint(igonanTxt.split("\n"), 50);
+  await delayedPrint(getIgonanText().split("\n"), 50);
 };
 
 export enum SorryType {
@@ -52,7 +52,7 @@ export const printSorry = async (t: SorryType) => {
   await delayedPrint("어!!!!!!!!!\n".split(""), 100, false);
   await sleep(3000);
 
-  await delayedPrint(sorryTxt.split("\n"), 50);
+  await delayedPrint(getSorryText().split("\n"), 50);
 
   await sleep(1000);
   newLine();
