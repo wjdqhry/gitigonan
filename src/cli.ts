@@ -32,22 +32,22 @@ const getIgonanAction = async (_: any, { args }: any) => {
   console.log("자~");
 
   const type = args[0];
+
   if (!type) {
     await printSorry(SorryType.ParamNotFound);
-    return;
-  }
+  } else {
+    try {
+      const result = await parseIgonan(type);
 
-  try {
-    const result = await parseIgonan(type);
-
-    if (result === "" || result.includes("undefined")) {
+      if (result === "" || result.includes("undefined")) {
+        await printSorry(SorryType.IgonanNotFound);
+      } else {
+        await printIgonan();
+        fs.writeFileSync(getDirPath(".gitigonan"), result);
+      }
+    } catch (e: any) {
       await printSorry(SorryType.IgonanNotFound);
-    } else {
-      await printIgonan();
-      fs.writeFileSync(".gitigonan", result);
     }
-  } catch (e: any) {
-    await printSorry(SorryType.IgonanNotFound);
   }
 
   newLine();
