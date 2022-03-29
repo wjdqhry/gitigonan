@@ -13,11 +13,9 @@ export function runCommander() {
   var commander = require("commander");
 
   commander
-    .command("igonan")
-    .usage("--type [type]")
+    .command("new <type>")
+    .usage("<type>")
     .description("깃아이고난 를! 만들어주는 나")
-    .alias("tmpl")
-    .option("-t, --type [type]", "언어나 프레임워크 를! 고르는 나")
     .action(getIgonanAction);
 
   commander.command("*", { noHelp: true }).action(() => {
@@ -28,10 +26,9 @@ export function runCommander() {
   commander.parse(process.argv);
 }
 
-const getIgonanAction = async (_: any, { args }: any) => {
+const getIgonanAction = async (type: any, { args }: any) => {
   console.log("자~");
 
-  const type = args[0];
 
   if (!type) {
     await printSorry(SorryType.ParamNotFound);

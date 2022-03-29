@@ -8,6 +8,9 @@
     "build": "tsc --build",
     "start": "node ./dist/index.js"
   },
+  "bin": {
+    "gitigonan": "./dist/index.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
