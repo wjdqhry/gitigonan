@@ -11,6 +11,10 @@
   "bin": {
     "gitigonan": "./dist/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url":"https://github.com/wjdqhry/gitigonan"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
