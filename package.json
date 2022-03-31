@@ -15,9 +15,6 @@
     "type": "git",
     "url": "https://github.com/wjdqhry/gitigonan"
   },
-  "publishConfig": {
-    "registry": "https://www.npmjs.com/package/gitigonan"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
